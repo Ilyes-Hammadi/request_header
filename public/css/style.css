@@ -6,3 +6,13 @@ body {
 a {
   color: #00B7FF;
 }
+
+span {
+  color: cornflowerblue;
+}
+
+p {
+  text-align: center;
+  font-size: 150%;
+  font-family: "Bitstream Vera Sans Mono", Monaco, "Courier New", Courier, monospace;
+}

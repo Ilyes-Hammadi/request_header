@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
-
+// Get ip address software version and language of the connected user 
+// from the http headers
 var userInfos = (req) => {
   return {
     software: req.headers['user-agent'].split('(')[1].split(')')[0],
@@ -12,7 +13,7 @@ var userInfos = (req) => {
 
 
 /* GET users listing. */
-router.get('/', function (req, res) {
+router.get('/whoami', function (req, res) {
   res.json(userInfos(req));
 });
 
