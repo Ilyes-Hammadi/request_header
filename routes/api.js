@@ -6,7 +6,8 @@ var userInfos = (req) => {
   return {
     software: req.headers['user-agent'].split('(')[1].split(')')[0],
     ipaddress: req.connection.remoteAddress,
-    language: req.headers['accept-language'].split(',')[0]
+    language: req.headers['accept-language'].split(',')[0],
+    headers: req.headers
   }
 };
 
