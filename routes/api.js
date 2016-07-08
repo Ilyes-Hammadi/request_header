@@ -5,9 +5,8 @@ var router = express.Router();
 var userInfos = (req) => {
   return {
     software: req.headers['user-agent'].split('(')[1].split(')')[0],
-    ipaddress: req.connection.remoteAddress,
-    language: req.headers['accept-language'].split(',')[0],
-    headers: req.headers
+    ipaddress: req.headers['x-forwarded-for'] || req.connection.remoteAddress,
+    language: req.headers['accept-language'].split(',')[0]
   }
 };
 
